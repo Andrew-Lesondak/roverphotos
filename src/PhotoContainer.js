@@ -11,26 +11,29 @@ function PhotoContainer() {
                     src='http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG'
                     alt='Mars'>
                 </img>
+                {/* Rover */}
+                <div className='rover-name'>
+                    <i class="fas fa-robot"></i>&nbsp;
+                    <span id='rover-name'>Curiosity</span>
+                </div>
+                {/* Camera */}
+                <div className='camera-name'>
+                    <i class="fas fa-video"></i>&nbsp;
+                    <span id='camera-name'>Front Hazard Avoidance Camera</span>
+                </div>
+                {/* Earth Date */}
+                <div className='earth-date'>
+                    <i class="far fa-calendar-alt"></i>&nbsp;
+                    <span id='earth-date'>2015-05-30</span>
+                </div>
+                
+                <button className='button' id='twitter'>
+                    <i className='fab fa-twitter'></i>
+                </button>
+                <button id='new-photo'>
+                    New Photo
+                </button>
             </div>
-            {/* Rover */}
-            <div className='rover-name'>
-                <span id='rover-name'>Curiosity</span>
-            </div>
-            {/* Camera */}
-            <div className='camera-name'>
-                <span id='camera-name'>Front Hazard Avoidance Camera</span>
-            </div>
-            {/* Earth Date */}
-            <div className='earth-date'>
-                <span id='earth-date'>2015-05-30</span>
-            </div>
-            
-            <button className='button' id='twitter'>
-                <i className='fab fa-twitter'></i>
-            </button>
-            <button id='new-photo'>
-                New Photo
-            </button>
         </>
     );
 }
