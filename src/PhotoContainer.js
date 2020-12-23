@@ -13,26 +13,29 @@ function PhotoContainer() {
                 </img>
                 {/* Rover */}
                 <div className='rover-name'>
-                    <i class="fas fa-robot"></i>&nbsp;
+                    <i className="fas fa-robot"></i>&nbsp;
                     <span id='rover-name'>Curiosity</span>
                 </div>
                 {/* Camera */}
                 <div className='camera-name'>
-                    <i class="fas fa-video"></i>&nbsp;
+                    <i className="fas fa-video"></i>&nbsp;
                     <span id='camera-name'>Front Hazard Avoidance Camera</span>
                 </div>
                 {/* Earth Date */}
                 <div className='earth-date'>
-                    <i class="far fa-calendar-alt"></i>&nbsp;
+                    <i className="far fa-calendar-alt"></i>&nbsp;
                     <span id='earth-date'>2015-05-30</span>
                 </div>
                 
-                <button className='button' id='twitter'>
-                    <i className='fab fa-twitter'></i>
-                </button>
-                <button id='new-photo'>
-                    New Photo
-                </button>
+                <div className='button-container'>
+                    <button className='twitter-button' id='twitter'>
+                        <i className='fab fa-twitter'></i>
+                    </button>
+                    <button id='new-photo'>
+                        New Photo
+                    </button>
+                </div>
+
             </div>
         </>
     );
