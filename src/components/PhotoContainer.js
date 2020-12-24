@@ -1,30 +1,30 @@
 import React from 'react';
-import './PhotoContainer.css';
+import '../styles/PhotoContainer.css';
 
-function PhotoContainer() {
+function PhotoContainer({ imageData }) {
     return (
         <>
             <div className='photo-container' id='photo-container'>
                 {/* Photo */}
                 <div className='photo-text'></div>
                 <img 
-                    src='http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG'
+                    src={ imageData.photos[0].img_src }
                     alt='Mars'>
                 </img>
                 {/* Rover */}
                 <div className='rover-name'>
                     <i className="fas fa-robot"></i>&nbsp;
-                    <span id='rover-name'>Curiosity</span>
+                    <span id='rover-name'>{ imageData.photos[0].rover.name }</span>
                 </div>
                 {/* Camera */}
                 <div className='camera-name'>
                     <i className="fas fa-video"></i>&nbsp;
-                    <span id='camera-name'>Front Hazard Avoidance Camera</span>
+                    <span id='camera-name'>{ imageData.photos[0].camera.full_name }</span>
                 </div>
                 {/* Earth Date */}
                 <div className='earth-date'>
                     <i className="far fa-calendar-alt"></i>&nbsp;
-                    <span id='earth-date'>2015-05-30</span>
+                    <span id='earth-date'>{ imageData.photos[0].earth_date }</span>
                 </div>
                 
                 <div className='button-container'>
