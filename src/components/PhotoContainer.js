@@ -2,7 +2,9 @@ import React from 'react';
 import '../styles/PhotoContainer.css';
 
 function PhotoContainer({ imageData }) {
-    return (
+    return imageData === "" ?
+        <div></div> :
+    (
         <>
             <div className='photo-container' id='photo-container'>
                 {/* Photo */}
