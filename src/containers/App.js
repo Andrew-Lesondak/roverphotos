@@ -21,12 +21,13 @@ const mapDispatchToProps = dispatch => {
 class App extends Component {
 
   componentDidMount() {
-    console.log("did mount?");
     this.props.onRequestImage();
   }
 
   render() {
+    
     const { imageData, isPending } = this.props;
+
     return isPending ?
       <h1>Loading</h1> :
       (
