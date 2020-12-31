@@ -26,13 +26,13 @@ class App extends Component {
 
   render() {
     
-    const { imageData, isPending } = this.props;
+    const { imageData, isPending, onRequestImage } = this.props;
 
     return isPending ?
       <h1>Loading</h1> :
       (
         <div className="App">
-          <PhotoContainer imageData={ imageData } />
+          <PhotoContainer imageData={ imageData } imageRequest={ onRequestImage } />
         </div>
       )
   }

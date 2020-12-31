@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/PhotoContainer.css';
 
-function PhotoContainer({ imageData }) {
+const PhotoContainer = ({ imageData, imageRequest }) => {
 
     let imageSrc = '',
         roverName = '',
@@ -9,10 +9,16 @@ function PhotoContainer({ imageData }) {
         earthDate = '';
 
     if(imageData.photos !== undefined && imageData.photos.length > 0) {
-        imageSrc = imageData.photos[0].img_src;
-        roverName = imageData.photos[0].rover.name;
-        cameraName = imageData.photos[0].camera.full_name;
-        earthDate = imageData.photos[0].earth_date;
+
+        const photo = imageData.photos.length > 1 ? getRandomRoverPhoto( imageData.photos ) : imageData.photos[0];
+
+        imageSrc = photo.img_src;
+        roverName = photo.rover.name;
+        cameraName = photo.camera.full_name;
+        earthDate = photo.earth_date;
+
+    } else {
+        imageRequest();
     }
 
     return imageData === "" ?
@@ -47,7 +53,9 @@ function PhotoContainer({ imageData }) {
                     <button className='twitter-button' id='twitter'>
                         <i className='fab fa-twitter'></i>
                     </button>
-                    <button id='new-photo'>
+                    <button 
+                        id='new-photo'
+                        onClick={ imageRequest }>
                         New Photo
                     </button>
                 </div>
@@ -55,6 +63,12 @@ function PhotoContainer({ imageData }) {
             </div>
         </>
     );
+}
+
+const getRandomRoverPhoto = ( photos ) => {
+
+    // random photo
+    return photos[ Math.floor( Math.random() * photos.length )];
 }
 
 export default PhotoContainer;
