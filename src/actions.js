@@ -9,22 +9,30 @@ import {
 // Using redux-thunk middleware
 export const requestImage = () => ( dispatch ) => {
 
-    const [ rover, camera, solNum ] = getRandomRoverData();
+    return fetch_retry( 15, dispatch );
 
-    // if status === active    
+}
 
-    console.log('rover: ', rover.name);
-    console.log('camera: ', camera.name);
-    console.log('solNum: ', solNum);
+const fetch_retry = ( n, dispatch ) => {
 
-    console.log('call: ', `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover.name}/photos?sol=${solNum}&camera=${camera.name}&api_key=${API_KEY}`);
+    let [ rover, camera, solNum ] = getRandomRoverData();
+    
+    console.log('URL: ', `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover.name}/photos?sol=${solNum}&camera=${camera.name}&api_key=${API_KEY}`);
 
     dispatch({ type: REQUEST_IMAGE_PENDING });
     fetch( `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover.name}/photos?sol=${solNum}&camera=${camera.name}&api_key=${API_KEY}` )
         .then( response => response.json() )
+        .then( data =>  {
+            if(data.photos.length === 0) {
+                return fetch_retry( n - 1, dispatch );
+            } else {
+                return data;
+            }
+        })
         .then( data => dispatch({ type: REQUEST_IMAGE_SUCCESS, payload: data }))
-        .catch( error => dispatch({ type: REQUEST_IMAGE_FAILED, payload: error }))
-}
+        .catch( error => dispatch({ type: REQUEST_IMAGE_FAILED, payload: error }))   
+
+};
 
 const getRandomRoverData = () => {
 

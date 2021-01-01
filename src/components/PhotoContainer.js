@@ -8,7 +8,7 @@ const PhotoContainer = ({ imageData, imageRequest }) => {
         cameraName = '',
         earthDate = '';
 
-    if(imageData.photos !== undefined && imageData.photos.length > 0) {
+    if(imageData !== undefined && imageData.photos !== undefined && imageData.photos.length > 0) {
 
         const photo = imageData.photos.length > 1 ? getRandomRoverPhoto( imageData.photos ) : imageData.photos[0];
 
@@ -17,12 +17,10 @@ const PhotoContainer = ({ imageData, imageRequest }) => {
         cameraName = photo.camera.full_name;
         earthDate = photo.earth_date;
 
-    } else {
-        imageRequest();
     }
 
-    return imageData === "" ?
-        <div></div> :
+    return imageData === "" || imageData === undefined ?
+        <h1>Loading</h1>  :
     (
         <>
             <div className='photo-container' id='photo-container'>
