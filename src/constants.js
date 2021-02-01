@@ -6,7 +6,7 @@ export const ROVER_DATA = [
     { 
         'name': 'curiosity',
         'status': 'active',
-        'max_sol': 2980,
+        'max_sol': -1,
         'camera_data': [
             { 'name': 'FHAZ', 'full_name': 'Front Hazard Avoidance Camera' },
             { 'name': 'NAVCAM', 'full_name': 'Navigation Camera' },
@@ -20,7 +20,7 @@ export const ROVER_DATA = [
     { 
         'name': 'opportunity',
         'status': 'complete',
-        'max_sol': 5111,
+        'max_sol': 5111, 
         'camera_data': [
             { 'name': 'FHAZ', 'full_name': 'Front Hazard Avoidance Camera' },
             { 'name': 'NAVCAM', 'full_name': 'Navigation Camera' },

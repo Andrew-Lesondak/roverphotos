@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/PhotoContainer.css';
+import Photo from './Photo';
 
 const PhotoContainer = ({ imageData, imageRequest }) => {
 
@@ -8,8 +9,14 @@ const PhotoContainer = ({ imageData, imageRequest }) => {
         cameraName = '',
         earthDate = '';
 
+    const getRandomRoverPhoto = ( photos ) => {
+
+        return photos[ Math.floor( Math.random() * photos.length )];
+    }
+
     if(imageData !== undefined && imageData.photos !== undefined && imageData.photos.length > 0) {
 
+        // get random photo from list of photos recieved from api call
         const photo = imageData.photos.length > 1 ? getRandomRoverPhoto( imageData.photos ) : imageData.photos[0];
 
         imageSrc = photo.img_src;
@@ -24,23 +31,21 @@ const PhotoContainer = ({ imageData, imageRequest }) => {
     (
         <>
             <div className='photo-container' id='photo-container'>
-                {/* Photo */}
-                <div className='photo'>
-                    <img 
-                        src={ imageSrc }
-                        alt='Mars'>
-                    </img>
-                </div>
+                
+                <Photo imageSrc={ imageSrc }/>
+
                 {/* Rover */}
                 <div className='rover-name'>
                     <i className="fas fa-robot"></i>&nbsp;
                     <span id='rover-name'>{ roverName }</span>
                 </div>
+
                 {/* Camera */}
                 <div className='camera-name'>
                     <i className="fas fa-video"></i>&nbsp;
                     <span id='camera-name'>{ cameraName }</span>
                 </div>
+
                 {/* Earth Date */}
                 <div className='earth-date'>
                     <i className="far fa-calendar-alt"></i>&nbsp;
@@ -61,12 +66,6 @@ const PhotoContainer = ({ imageData, imageRequest }) => {
             </div>
         </>
     );
-}
-
-const getRandomRoverPhoto = ( photos ) => {
-
-    // random photo
-    return photos[ Math.floor( Math.random() * photos.length )];
 }
 
 export default PhotoContainer;
