@@ -5,6 +5,18 @@
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.4);
     box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
+    color: #333;
+
+    & .photo {
+
+        & .loader {
+
+            & .loading-text {
+                font-size: 2rem;
+
+            }
+        }
+    }
 
     & img {
         width: 100%;
@@ -12,8 +24,19 @@
     }
 
     & .rover-name {
-        font-size: 1.5rem;
+        font-size: 3rem;
         font-weight: bold;
+        margin: 2px;
+
+        /* Media Query: Tablet or Smaller */
+        @media screen and (max-width: 1000px) {
+            font-size: 2rem;
+        }
+    }
+
+    & .camera-name {
+        font-size: 2rem;
+        font-weight: 400;
         margin: 2px;
 
         /* Media Query: Tablet or Smaller */
@@ -22,16 +45,15 @@
         }
     }
 
-    & .camera-name {
-        font-size: 1rem;
-        font-weight: 400;
-        margin: 2px;
-    }
-
     & .earth-date {
-        font-size: 1rem;
+        font-size: 2rem;
         font-weight: 400;
         margin: 2px;
+
+        /* Media Query: Tablet or Smaller */
+        @media screen and (max-width: 1000px) {
+            font-size: 1.2rem;
+        }
     }
 
     & .button-container {

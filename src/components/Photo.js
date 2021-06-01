@@ -1,14 +1,15 @@
-import React, { useState, useEffect, Component } from 'react';
+import React from 'react';
 import '../styles/PhotoContainer.css';
 
-const Photo = ({ imageSrc }) => {
+const Photo = ({ imageSrc, photoLoaded }) => {
 
     return (
         <>
             <div className='photo'>
                 <img 
                     src={ imageSrc }
-                    alt='Mars'>
+                    alt='Mars'
+                    onLoad={ () => photoLoaded }>
                 </img>
             </div>
         </>

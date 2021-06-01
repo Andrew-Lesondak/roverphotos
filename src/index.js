@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import { requestImage } from './reducers';
+import { requestImage, setImageLoaded } from './reducers';
 import './styles/index.css';
 import App from './containers/App';
 import reportWebVitals from './reportWebVitals';
 
-const rootReducers = combineReducers({ requestImage });
+const rootReducers = combineReducers({ requestImage, setImageLoaded });
 const store = createStore( rootReducers, applyMiddleware( thunkMiddleware ));
 
 ReactDOM.render(
