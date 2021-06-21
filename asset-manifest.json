@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/roverphotos/static/css/main.feb2329f.chunk.css",
+    "main.js": "/roverphotos/static/js/main.860ec0ec.chunk.js",
+    "main.js.map": "/roverphotos/static/js/main.860ec0ec.chunk.js.map",
+    "runtime-main.js": "/roverphotos/static/js/runtime-main.6e670062.js",
+    "runtime-main.js.map": "/roverphotos/static/js/runtime-main.6e670062.js.map",
+    "static/js/2.d8135332.chunk.js": "/roverphotos/static/js/2.d8135332.chunk.js",
+    "static/js/2.d8135332.chunk.js.map": "/roverphotos/static/js/2.d8135332.chunk.js.map",
+    "static/js/3.5601f9e1.chunk.js": "/roverphotos/static/js/3.5601f9e1.chunk.js",
+    "static/js/3.5601f9e1.chunk.js.map": "/roverphotos/static/js/3.5601f9e1.chunk.js.map",
+    "index.html": "/roverphotos/index.html",
+    "static/css/main.feb2329f.chunk.css.map": "/roverphotos/static/css/main.feb2329f.chunk.css.map",
+    "static/js/2.d8135332.chunk.js.LICENSE.txt": "/roverphotos/static/js/2.d8135332.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6e670062.js",
+    "static/js/2.d8135332.chunk.js",
+    "static/css/main.feb2329f.chunk.css",
+    "static/js/main.860ec0ec.chunk.js"
+  ]
+}
