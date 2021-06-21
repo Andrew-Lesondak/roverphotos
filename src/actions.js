@@ -13,7 +13,7 @@ export const requestImage = () => ( dispatch, eventArgs ) => {
 
 const getRoverData = async ( dispatch ) => {
     dispatch({ type: REQUEST_IMAGE_PENDING });
-    await fetch( `http://localhost:5000/api/search` )
+    await fetch( `https://nasa-rover-images.herokuapp.com/api/search` )
         .then( response => response.json() )
         .then( data => dispatch({ type: REQUEST_IMAGE_SUCCESS, payload: data.results }))
         .catch( error => dispatch({ type: REQUEST_IMAGE_FAILED, payload: error }))   
