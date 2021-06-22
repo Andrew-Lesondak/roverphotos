@@ -6,6 +6,10 @@
   </a>
 </p>
 
+<a href="https://mars.nasa.gov/" target="_blank">
+  <img alt="NASA Mars Logo" src="https://mars.nasa.gov/layout/mars2020/images/logo_nasa@2x.png">
+</a>
+
 > Mars Rover Photo Viewer is a web app that lets users explore Mars with the click of a button. Since many of us won't get a chanced to visit Mars any time soon, why not enjoy the red planet without leaving the blue one? Using NASA's API, Mars Rover Photo Viewer will fetch a random photo taken by one of three Mars rovers and render it on your screen. This web application was built in ReactJS, Redux and Node.js. The combination of convenient package and state management with JSX templating language seemed like a great approach to development. 
 
 ### ✨ [Demo](https://arlesondak.github.io/roverphotos/)
